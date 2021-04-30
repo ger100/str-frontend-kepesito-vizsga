@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../model/movie';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,13 +12,28 @@ export class MovieListComponent implements OnInit {
 
   movies: Movie[] = [];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit(): void {
   }
 
-  getMovies(): void {}
 
-  deleteMovie(id: number): any {}
+  getAll(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.BASE_URL);
+  }
+
+  getMovies(): void {
+    return this.http.get<Movie>(`${this.BASE_URL}/${id}`);
+  }
+
+  deleteMovie(id: number): any {
+    return this.http.delete<Movie>(`${this.BASE_URL}/${id}`);
+  }
+
+
+
+
 
 }

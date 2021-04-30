@@ -1,1 +1,7 @@
+.container-md {background-color: rgb(53, 53, 50);}
+label {color: alert-warning};
 
+.row {
+  display: flex;
+  justify-content: space-between;
+}
