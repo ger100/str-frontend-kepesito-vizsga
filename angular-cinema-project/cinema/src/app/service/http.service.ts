@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class HttpService {
 
-  BASE_URL = 'http://ttps://tr360-frontend-exam-april.azurewebsites.net/ger100/movies:3000/movies';
+  BASE_URL = 'https://tr360-frontend-exam-april.azurewebsites.net/ger100/movies:3000/movies';
 
   constructor(undefined) { }
 
